@@ -134,7 +134,7 @@ public class Funciones {
 		
 	}
 	
-	public static String listaNombres(String[] listaNombres,int r, int s) {
+	public static String recortarPalabras(String[] listaNombres,int r, int s) {
 		String[] lista=new String [listaNombres.length];
 		String control="";
 			for (int i = 0; i < listaNombres.length; i++) {	
