@@ -71,5 +71,3 @@ public class multiplicacionesYPonencias {
 		assertEquals(30,o.CadenaNumero(cadenaNombres));
 	}
 }
-
-}
