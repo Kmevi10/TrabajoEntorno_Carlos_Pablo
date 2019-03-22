@@ -119,36 +119,80 @@ public class Funciones {
 		return suma;
 	}
 	
-	public static double multiplicacionesYPonencias(double[] numeros){
+	public static double[] multiplicacionesYPonencias(double[] numeros, int z, int w) {
 
-		if (numeros == null) {
-			
-			for (int i = 0; i < numeros.length; i++) {
+		if (numeros != null) {
+
+			double[] solucion = new double[numeros.length];
+			double[] vacio = new double[0];
+			if (Arrays.toString(solucion) != Arrays.toString(vacio)) {
+
+				for (int i = 0; i < numeros.length; i++) {
+					
+					if (i % 2 == 0) {
+						
+						solucion[i] = numeros[i] * z;
+						
+					} else {
+						
+						double control = numeros[i];
+						for (int j = 0; j < w - 1; j++) {
+							
+							numeros[i] *= control;
+							
+						}
+						solucion[i] = numeros[i];
+						
+					}
+
+				}
 				
+				return solucion;
 				
+			} else {
+				
+				return solucion;
 				
 			}
+
+		} else {
+			
+			return null;
 			
 		}
-		return 0;
+
+	}
+
+	
+public static String[] recortarPalabras(String[] palabras, int r, int s) {
+		
+		if (palabras != null) {
+			
+			String[] solucion = new String[palabras.length];
+			String control = "";
+			for (int i = 0; i < palabras.length; i++) {
+			
+				for (int j = r - 1; j < s && j < palabras[i].length(); j++) {
+				
+					control += Character.toString(palabras[i].charAt(j));
+				
+				}
+				
+				solucion[i] = control;
+				control = "";
+			
+			}
+			return solucion;
+			
+		} else {
+			
+			return null;
+			
+		}
 		
 	}
-	
-	public static String listaNombres(String[] listaNombres,int r, int s) {
-		String[] lista=new String [listaNombres.length];
-		String control="";
-			for (int i = 0; i < listaNombres.length; i++) {	
-				
-				for (int j =r-1; j < s && j<listaNombres[i].length(); j++) {
-					
-					control += Character.toString(listaNombres[i].charAt(j));
-					
-				}
-				lista[i]=control;
-				control="";
-			}
-			return Arrays.toString(lista);
-		}
+
+
 	
 	public Boolean alumnosTrabajo(String[] nombres, int[][] tiempoTrabajos) {
 		boolean respuesta=false;
