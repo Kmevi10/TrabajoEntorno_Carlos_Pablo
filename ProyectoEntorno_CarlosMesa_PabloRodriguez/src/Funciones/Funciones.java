@@ -150,18 +150,21 @@ public class Funciones {
 			return Arrays.toString(lista);
 		}
 	
-	public Boolean alumnosTrabajo(String[][] array) {
-		
-		for(int i = 0; i < array.length; i++) {
-			int total = 0;
-			for(int j = 1; j < array[i].length; j++) {
-				int num1 = Integer.parseInt(array[i][j]);
-				total = total + num1;
-			}
-			if(total<=500) {
-				return false;
-			}
+	public Boolean alumnosTrabajo(String[] nombres, int[][] tiempoTrabajos) {
+		boolean respuesta=false;
+		if(nombres==null || tiempoTrabajos==null) {
+		return false;	
 		}
-		return true;
-	}
+			for(int i = 0; i < tiempoTrabajos.length; i++) {
+				int total = 0;
+				for(int j = 0; j < tiempoTrabajos[i].length; j++) {
+					int num1 = tiempoTrabajos[i][j];
+					total = total + num1;
+				}
+				if(total >=500) {
+					respuesta=true;
+				}
+			}
+			return respuesta;
+		}
 }
