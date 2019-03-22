@@ -99,8 +99,24 @@ public class Funciones {
 		
 	}
 
-	public static void ejercicio5() {
+	public static int CadenaNumero(String cadena) {
 		
+		int suma=0;
+		
+		if(cadena==null) {
+			
+			return suma;
+			
+		}
+		
+		for (int i = 0; i < cadena.length(); i++) {
+			
+			if(cadena.charAt(i)>=48 && cadena.charAt(i)<=57) {
+				
+				suma +=cadena.charAt(i)-48;
+			}
+		}
+		return suma;
 	}
 	
 	public static double multiplicacionesYPonencias(double[] numeros){
@@ -118,4 +134,34 @@ public class Funciones {
 		
 	}
 	
+	public static String listaNombres(String[] listaNombres,int r, int s) {
+		String[] lista=new String [listaNombres.length];
+		String control="";
+			for (int i = 0; i < listaNombres.length; i++) {	
+				
+				for (int j =r-1; j < s && j<listaNombres[i].length(); j++) {
+					
+					control += Character.toString(listaNombres[i].charAt(j));
+					
+				}
+				lista[i]=control;
+				control="";
+			}
+			return Arrays.toString(lista);
+		}
+	
+	public Boolean alumnosTrabajo(String[][] array) {
+		
+		for(int i = 0; i < array.length; i++) {
+			int total = 0;
+			for(int j = 1; j < array[i].length; j++) {
+				int num1 = Integer.parseInt(array[i][j]);
+				total = total + num1;
+			}
+			if(total<=500) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
