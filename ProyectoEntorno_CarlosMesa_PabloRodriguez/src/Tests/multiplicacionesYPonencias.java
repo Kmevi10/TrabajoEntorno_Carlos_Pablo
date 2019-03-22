@@ -1,6 +1,6 @@
 package Tests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import Funciones.Funciones;
 
-class CadenaNumero {
+public class multiplicacionesYPonencias {
 
 	static Funciones o = null;
 	static int cont=0;
@@ -70,4 +70,6 @@ class CadenaNumero {
 		String cadenaNombres = "Pablo Rodriguez 7-9-2000, Carlos Mesa 16-12-2000";
 		assertEquals(30,o.CadenaNumero(cadenaNombres));
 	}
+}
+
 }

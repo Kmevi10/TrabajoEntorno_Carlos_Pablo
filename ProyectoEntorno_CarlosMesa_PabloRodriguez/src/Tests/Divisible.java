@@ -10,6 +10,7 @@ class Divisible {
 
 	static Funciones o = null;
 	static int x;
+	static int cont=0;
 
 	/*
 	 * Antes de cada test se reseteará "o" y "x", la cual debemos meter siempre y
@@ -23,6 +24,15 @@ class Divisible {
 		o = new Funciones();
 		x = 7;
 
+	}
+	@AfterAll
+	static void finalizarTest() {
+	Funciones o = null;
+	}
+	@AfterEach
+	void contador() {
+		cont++;
+		System.out.println("Esta es la prueba numero : "+cont);
 	}
 
 	/*

@@ -3,20 +3,28 @@ package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.Test;
 
 import Funciones.Funciones;
 
 class Cadenas {
 
 	static Funciones o = null;
-
+	static int cont=0;
 	/*
 	 * Antes de cada función haremos un "reseteo" de "o".
 	 */
 	@BeforeAll
 	static void prepararPrueba() {
 		o = new Funciones();
+	}
+	@AfterAll
+	static void finalizarTest() {
+	Funciones o = null;
+	}
+	@AfterEach
+	void contador() {
+		cont++;
+		System.out.println("Esta es la prueba numero : "+cont);
 	}
 
 	/*

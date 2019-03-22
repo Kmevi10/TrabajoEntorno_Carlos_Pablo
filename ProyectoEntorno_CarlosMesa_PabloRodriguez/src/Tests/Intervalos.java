@@ -10,6 +10,7 @@ class Intervalos {
 
 	static Funciones o = null;
 	static int y;
+	static int cont=0;
 
 	/*
 	 * Antes de cada test se reseteará "o" e "y", la cual debemos meter siempre y
@@ -23,6 +24,15 @@ class Intervalos {
 		o = new Funciones();
 		y = 250;
 
+	}
+	@AfterAll
+	static void finalizarTest() {
+	Funciones o = null;
+	}
+	@AfterEach
+	void contador() {
+		cont++;
+		System.out.println("Esta es la prueba numero : "+cont);
 	}
 
 	/*
